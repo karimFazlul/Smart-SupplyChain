@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Shipment</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <form id="form-1" style="width: 600px; margin: auto;">
+        <h2>Add New User</h2>
+        <!-- struct User {
+            uint id;
+            string name;
+            string email;
+            string password;
+            string role;
+            string _address;
+        } -->
+        <div class="form-group">
+            <label for="ID">User Id</label>
+            <input type="text" class="form-control" id="ID" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="Name">User Name</label>
+            <input type="text" class="form-control" id="Name" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="Email">Email address</label>
+          <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" class="form-control" id="Password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="Role">User Role</label>
+            <input type="text" class="form-control" id="Role" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        <div class="Address">
+            <label for="Role">User Address</label>
+            <input type="text" class="form-control" id="Address" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+        
+        <button type="submit" class="btn btn-primary submit-btn" style="margin-top: 20px">Add User</button>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

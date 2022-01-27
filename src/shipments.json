@@ -1,0 +1,34 @@
+[
+  {
+    "id": "001",
+    "ownership": "seller",
+    "owner_id": "1001",
+    "picture": "images/cargo.jpg",
+    "seller_id": "1001",
+    "buyer_id": "1004",
+    "cargo_id": "#1001",
+    "created": "12/07/2021"
+  },
+  {
+    "id": "002",
+    "ownership": "seller",
+    "owner_id": "1002",
+    "picture": "images/cargo.jpg",
+    "seller_id": "1002",
+    "buyer_id": "1005",
+    "cargo_id": "#1001",
+    "created": "12/07/2021"
+  },
+  {
+    "id": "003",
+    "ownership": "seller",
+    "owner_id": "1003",
+    "picture": "images/cargo.jpg",
+    "seller_id": "10003",
+    "buyer_id": "1006",
+    "cargo_id": "#1001",
+    "created": "12/12/2021"
+  }
+  
+  
+]

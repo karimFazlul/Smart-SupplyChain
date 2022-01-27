@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approve Ownership Transfer</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <a  class='btn btn-primary' href="index.html">Home</a>
+    <form id="form-5" style="width: 600px; margin: auto;" >
+        <h2> Approve Ownership Transfer</h2>
+        <!-- struct User {
+            uint id;
+            string name;
+            string email;
+            string password;
+            string role;
+            string _address;
+        } -->
+        <div class="form-group">
+            <label for="ID">User Id</label>
+            <input type="text" class="form-control" id="ID" name="ID" aria-describedby="emailHelp" placeholder="User Id">
+        </div>
+        <div class="form-group">
+            <label for="sID">Shipment Id</label>
+            <input type="text" class="form-control" id="sID" name="sID" aria-describedby="emailHelp" placeholder="Shipment Id">
+        </div>
+        <div class="form-group">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" name="inlineRadio1" value="Yes">
+                <label class="form-check-label" for="inlineRadio1">Yes</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" name="inlineRadio2" value="No">
+                <label class="form-check-label" for="inlineRadio2">No</label>
+              </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary submit-btn" style="margin-top: 20px">Submit</button>
+    </form>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/approveOwnershipTransfer.js"></script>
+</body>
+</html>

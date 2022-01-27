@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creat Shipment</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <a  class='btn btn-primary' href="index.html">Home</a>
+    <form id="form-2" onsubmit="createShipment(event)" style="width: 700px; margin: auto;">
+      <h2 class="mb-4">Shipment</h2>
+        <!-- struct User {
+            uint id;
+            string name;
+            string email;
+            string password;
+            string role;
+            string _address;
+        } -->
+        <div class="form-group">
+            <label for="ID">Shipment Id</label>
+            <input type="text" class="form-control" id="shipmentID" aria-describedby="emailHelp" placeholder="Shipment Id">
+        </div>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" class="form-control" id="date" aria-describedby="emailHelp" placeholder="Date">
+        </div>
+        <div class="form-group">
+          <label for="Email">Owner Id</label>
+          <input type="text" class="form-control" id="ownerID" aria-describedby="emailHelp" placeholder="Owner Id">
+        </div>
+        <div class="form-group">
+            <label for="Password">Buyer Id</label>
+            <input type="text" class="form-control" id="buyerID" placeholder="Buyer Id">
+        </div>
+        <div class="form-group">
+            <label for="Role">Seller Id</label>
+            <input type="text" class="form-control" id="sellerID" aria-describedby="emailHelp" placeholder="Seller Id">
+        </div>
+        <div class="Address">
+            <label for="Role">Cargo ID</label>
+            <input type="text" class="form-control" id="cargoID" aria-describedby="emailHelp" placeholder="Cargo ID">
+        </div>
+        <div class="Address">
+          <label for="Role">Product ID</label>
+          <input type="text" class="form-control" id="productID" aria-describedby="emailHelp" placeholder="Product ID">
+      </div>
+      <div class="Address">
+        <label for="Role">User ID</label>
+        <input type="text" class="form-control" id="userID" aria-describedby="emailHelp" placeholder="User ID">
+      </div>
+          
+          <button  class="btn btn-primary btn-shipment" style="margin-top: 20px;">Create Shipment</button>
+      </div>
+    </form>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      $( function() {
+          $( "#date" ).datepicker();
+      } );
+    </script>
+    <script src="js/createShipment.js"></script>
+    
+</body>
+</html>

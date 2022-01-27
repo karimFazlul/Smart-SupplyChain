@@ -1,0 +1,29 @@
+[
+  {
+    "id": "001",
+    "name": "User1",
+    "email": "user1@test.com",
+    "picture": "images/avatar.png",
+    "role": "seller",
+    "Address": "IIUM"
+  },
+  {
+    "id": "002",
+    "name": "User2",
+    "email": "user3@test.com",
+    "picture": "images/avatar.png",
+    "role": "buyer",
+    "Address": "KL"
+  },
+  
+  {
+    "id": "003",
+    "name": "User3",
+    "email": "user3@test.com",
+    "picture": "images/avatar.png",
+    "role": "seller",
+    "Address": "IIUM"
+  }
+  
+  
+]
