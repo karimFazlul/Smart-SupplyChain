@@ -64,6 +64,8 @@ contract SmartSupplyChain {
         string ownership;
         bool approvedByManager;
         bool approvedByCustoms;
+        string status;
+        string location;
     }
     struct trackShipmentOrder{
         uint shipmentID;
@@ -219,7 +221,8 @@ contract SmartSupplyChain {
     function createShipmentOrder(
         uint _id, string memory _timestamp, uint _ownerID,
         uint  _buyerID, uint  _sellerID, 
-        uint  _cargoID, uint[] memory _productID, uint _userID
+        uint  _cargoID, uint[] memory _productID, uint _userID,
+        string memory _status, string memory _location
     ) public _managerOnly(_userID){
         
         // get the refrence of the user that has _address as its key of the mapping table
@@ -234,6 +237,8 @@ contract SmartSupplyChain {
         _order.ownership = "seller";
         _order.approvedByManager = false;
         _order.approvedByCustoms = false;
+        _order.status = _status;
+        _order.location = _location;
         allOrder.push(_id); 
         // add tracking data
         trackShipmentOrder memory t;
@@ -356,7 +361,7 @@ contract SmartSupplyChain {
         User memory _user = user[userID];
         require(
             keccak256(abi.encodePacked((_user.role))) == keccak256(abi.encodePacked(("buyer"))),
-            "Only Buyer can perform this action."
+            "Only Distributor can perform this action."
         );
         _;
     }
@@ -379,11 +384,8 @@ contract SmartSupplyChain {
         require(t.traceDataVarifiedByManager && t.traceDataVarifiedByBiller,"Manager and Biller varification needed");
         emit paymentProcessInit("Payment process has been initiated.");
     }
-    //  // Retrieving the adopters
-    // function getUser() public view returns (uint[] memory) {
-    //     return allMembers;
-    // }
-    // function getAllUsers() public _ownerOnly returns(User[] memory){
+
+    // function get_User(uint _userID) public returns(string[] memory){
     //     //     struct User {
     //     //     uint id;
     //     //     string name;
@@ -393,23 +395,23 @@ contract SmartSupplyChain {
     //     //     string _address;
     //     // }
     //         // Declaring a dynamic array 
-    //     User[] memory data; 
+    //     // User storage data; 
     
     //     // Defining a function 
     //     // to demonstrate 'For loop'
         
-    //     for(uint i=0; i<allMembers.length; i++){
-    //         User storage  _user = user[allMembers[i]]; // key of hash(mapping) table
 
-    //         data[i].id = _user.id;
-    //         data[i].name = _user.name;
-    //         data[i].email = _user.email;
-    //         data[i].password = _user.password;
-    //         data[i]._address = _user._address;
-    //         data[i].role = _user.role;
+    //         User storage  _user = user[_userID]; // key of hash(mapping) table
+
+    //         // data.id = _user.id;
+    //         // data.name = _user.name;
+    //         // data.email = _user.email;
+    //         // data.password = _user.password;
+    //         // data._address = _user._address;
+    //         // data.role = _user.role;
         
-    //     }
-    //     return data;
+        
+    //     return ( _user.name, _user.email, _user._address, _user.role);
     // }
     
    
