@@ -1,74 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creat Shipment</title>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Shipment</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <a  class='btn btn-primary' href="index.html">Home</a>
-    <form id="form-2" onsubmit="createShipment(event)" style="width: 700px; margin: auto;">
-      <h2 class="mb-4">Shipment</h2>
-        <!-- struct User {
-            uint id;
-            string name;
-            string email;
-            string password;
-            string role;
-            string _address;
-        } -->
-        <div class="form-group">
-            <label for="ID">Shipment Id</label>
-            <input type="text" class="form-control" id="shipmentID" aria-describedby="emailHelp" placeholder="Shipment Id">
-        </div>
-        <div class="form-group">
-            <label for="date">Date</label>
-            <input type="date" class="form-control" id="date" aria-describedby="emailHelp" placeholder="Date">
-        </div>
-        <div class="form-group">
-          <label for="Email">Owner Id</label>
-          <input type="text" class="form-control" id="ownerID" aria-describedby="emailHelp" placeholder="Owner Id">
-        </div>
-        <div class="form-group">
-            <label for="Password">Buyer Id</label>
-            <input type="text" class="form-control" id="buyerID" placeholder="Buyer Id">
-        </div>
-        <div class="form-group">
-            <label for="Role">Seller Id</label>
-            <input type="text" class="form-control" id="sellerID" aria-describedby="emailHelp" placeholder="Seller Id">
-        </div>
-        <div class="Address">
-            <label for="Role">Cargo ID</label>
-            <input type="text" class="form-control" id="cargoID" aria-describedby="emailHelp" placeholder="Cargo ID">
-        </div>
-        <div class="Address">
-          <label for="Role">Product ID</label>
-          <input type="text" class="form-control" id="productID" aria-describedby="emailHelp" placeholder="Product ID">
-      </div>
-      <div class="Address">
-        <label for="Role">User ID</label>
-        <input type="text" class="form-control" id="userID" aria-describedby="emailHelp" placeholder="User ID">
-      </div>
-          
-          <button  class="btn btn-primary btn-shipment" style="margin-top: 20px;">Create Shipment</button>
-      </div>
-    </form>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <a class="btn btn-primary" href="index.html">Home</a>
+  <!-- uint _id, uint  _shipmentID, uint productsID,uint _buyerID, uint _sellerID) public _sellerOnly(_sellerID) returns(bool) -->
+  <form id="customForm" style="width: 600px; margin: auto;">
+    <h2>Create New Shipment</h2>
+    <div class="form-group">
+      <label for="s_id">Shipment ID</label>
+      <input type="text" class="form-control" id="s_id" aria-describedby="emailHelp" placeholder="Shipment ID">
+    </div>
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="date" class="form-control" id="date" placeholder="Date">
+    </div>
+    <div class="form-group">
+      <label for="sellerID">Seller ID</label>
+      <input type="text" class="form-control" id="sellerID" placeholder="Seller ID">
+    </div>
+    <div class="form-group">
+      <label for="buyerID">Buyer ID</label>
+      <input type="text" class="form-control" id="buyerID" placeholder="Buyer ID">
+    </div>
+    <div class="form-group">
+      <label for="cargoID">Cargo ID</label>
+      <input type="text" class="form-control" id="cargoId" placeholder="Cargo ID">
+    </div>
+    <div class="form-group">
+      <label for="productID">Product ID</label>
+      <input type="text" class="form-control" id="cargoId" placeholder="Product ID">
+    </div>
+    <div class="form-group">
+      <label for="managerID">Manager ID</label>
+      <input type="text" class="form-control" id="managerID" placeholder="Manager ID">
+    </div>
+    <div class="form-group">
+      <label for="location">Delivery Location</label>
+      <input type="text" class="form-control" id="location" placeholder="Delivery Location">
+    </div>
+    <div class="form-group">
+      <label for="status">Delivery Status</label>
+      <input type="text" class="form-control" id="status" placeholder="Delivery Status">
+    </div>
+    
+    <button type="submit" class="btn btn-primary create-btn">Submit</button>
+  </form>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/web3.min.js"></script>
     <script src="js/truffle-contract.js"></script>
     <script src="js/app.js"></script>
     <script>
-      $( function() {
-          $( "#date" ).datepicker();
-      } );
+      // let myForm = document.getElementById("customForm");
+      // let formData = new FormData(myForm);
+      // let s_id  = document.getElementById("s_id");
+      // let date = document.getElementById("date");
+      // let sellerID = document.getElementById("sellerID")
+      // buyerID = document.getElementByIdbuyerID
+      // let 
+      var oldShipments = JSON.parse(localStorage.getItem('shipments')) || [];
+      let prod_Ids = []
+      prod_Ids.push(1002)
+
+      // console.log(formData)
+      $( "#customForm" ).on( "submit", function( event ) {
+        prod_Ids.push(parseInt(event.target[5].value))
+        data = {}
+        event.preventDefault();
+        console.log('====================================');
+        console.log(event.target[0].value);
+        console.log(event);
+        data.s_id = parseInt(event.target[0].value);
+        data.date = event.target[1].value;
+        data.sellerID = event.target[2].value;
+        // data.ownerID = event.target[2].value;
+        data.buyerID = event.target[3].value;
+        data.cargoID = event.target[4].value;
+        data.productID = prod_Ids;
+        data.managerID = event.target[6].value;
+        data.location = event.target[7].value;
+        data.status = event.target[8].value;
+        console.log(data);
+        oldShipments.push(data)
+         
+        let supplyChainInstance;
+
+        web3.eth.getAccounts(function(error, accounts) {
+          if (error) {
+            console.log(error);
+          }
+
+          var account = accounts[0];
+
+          App.contracts.SmartSupplyChain.deployed().then(function(instance) {
+            supplyChainInstance = instance;
+
+            // Execute adopt as a transaction by sending account
+            return supplyChainInstance.createShipmentOrder(data.s_id, data.date, data.sellerID,data.buyerID, 
+            data.sellerID, data.cargoID,data.productID, data.managerID,data.status,data.location, {from: account});
+          }).then(function(result) {
+            localStorage.setItem('shipments', JSON.stringify(oldShipments)); 
+          }).catch(function(err) {
+              console.log(err.message);
+          });
+        });
+
+      });
+            
     </script>
-    <script src="js/createShipment.js"></script>
-    
 </body>
 </html>
