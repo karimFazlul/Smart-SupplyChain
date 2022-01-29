@@ -6,8 +6,10 @@
     "picture": "images/cargo.jpg",
     "seller_id": "1001",
     "buyer_id": "1004",
-    "cargo_id": "#1001",
-    "created": "12/07/2021"
+    "cargo_id": "1001",
+    "created": "2021-10-28",
+    "deliveryStatus": "Delivered",
+    "deliveryLocation": "KL"
   },
   {
     "id": "002",
@@ -16,8 +18,10 @@
     "picture": "images/cargo.jpg",
     "seller_id": "1002",
     "buyer_id": "1005",
-    "cargo_id": "#1001",
-    "created": "12/07/2021"
+    "cargo_id": "1001",
+    "created": "2021-11-28",
+    "deliveryStatus": "Delivered",
+    "deliveryLocation": "KL"
   },
   {
     "id": "003",
@@ -26,8 +30,10 @@
     "picture": "images/cargo.jpg",
     "seller_id": "10003",
     "buyer_id": "1006",
-    "cargo_id": "#1001",
-    "created": "12/12/2021"
+    "cargo_id": "1001",
+    "created": "2021-07-15",
+    "deliveryStatus": "Delivered",
+    "deliveryLocation": "KL"
   }
   
   
