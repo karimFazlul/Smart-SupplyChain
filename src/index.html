@@ -18,8 +18,11 @@
     <![endif]-->
    
   </head>
-  <body>
+  <body id="body">
     <div class="container">
+      <div id="toast">
+         
+      </div>
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-push-2">
           <h1 class="text-center" style="margin: 40px 0px; ">Smart Supply Chain</h1>
@@ -29,9 +32,13 @@
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-right: 10px; ">
             Transfer Ownership
           </button>
+          
 
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-1" style="margin-right: 10px;  ">
             Add User
+          </button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sensorModal" style="margin-right: 10px;  ">
+            IoT Sensor
           </button>
           <hr/>
           <br/>
@@ -87,6 +94,7 @@
             <strong>Buyer ID</strong>: <span class="buyer_id">10</span><br/><br/>
             <strong>Cargo ID</strong>: <span class="cargo_id">10</span><br/><br/>
             <strong>Created At</strong>: <span class="created">10</span><br/><br/>
+            <strong>Updated At</strong>: <span class="updated"></span><br/><br/>
             <strong>Delivery Location</strong>: <span class="location">10</span><br/><br/>
             <strong>Delivery Status</strong>: <span class="status">10</span><br/><br/>
           </div>
@@ -169,11 +177,11 @@
               } -->
               <div class="form-group">
                   <label for="ID">User Id</label>
-                  <input type="text" class="form-control" id="ID" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="text" class="form-control" id="ID" aria-describedby="emailHelp" placeholder="Enter User Id">
               </div>
               <div class="form-group">
                   <label for="Name">User Name</label>
-                  <input type="text" class="form-control" id="Name" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="text" class="form-control" id="Name" aria-describedby="emailHelp" placeholder="Enter User Name">
               </div>
               <div class="form-group">
                 <label for="Email">Email address</label>
@@ -202,7 +210,44 @@
           </div>
         </div>
       </div>
+    </div>
     <!-- ========================================================= -->
+    <!-- Sencor Modal -->
+    <div class="modal fade" id="sensorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="sensorModal">IoT Sensor Data</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="form-8" onsubmit="handleSubmit(event)">
+              
+              <div class="form-group">
+                  <label for="shipment_ID">Shipment Id</label>
+                  <input type="text" class="form-control" id="shipment_ID" aria-describedby="emailHelp" placeholder="Enter Shipment Id">
+              </div>
+              <div class="form-group">
+                  <label for="IoT_location">Location</label>
+                  <input type="text" class="form-control" id="IoT_location" aria-describedby="emailHelp" placeholder="Enter Location">
+              </div>
+              <div class="form-group">
+                <label for="IoT_date">Date</label>
+                <input type="date" class="form-control" id="IoT_date" aria-describedby="emailHelp" placeholder="Date">
+              </div>
+              <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                <button type="submit" class="btn btn-primary" >Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    <!-- ========================================================= -->
+     
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -212,5 +257,6 @@
     <script src="js/app.js"></script>
     <script src="js/transferOwnership.js"></script>
     <script src="js/addUser.js"></script>
+    <script src="js/IoT_Sensorconfirmation.js"></script>
   </body>
 </html>
